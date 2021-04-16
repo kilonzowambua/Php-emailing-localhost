@@ -9,7 +9,7 @@ if(isset($_POST['sent']))
 
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 
-$mail->setFrom('kilonzowambua254@gmail.com');
+$mail->setFrom('@gmail.com');
 $mail->addAddress($_POST['email']);
 $mail->Subject =$_POST['subject'];
 $mail->Body = '<h2>Hello from Antony,Senior Developer At Gelisa systems!</h2><p style="color:Blue;">'.$_POST['message'].'</p>';
@@ -21,8 +21,8 @@ $mail->SMTPSecure = 'ssl';
 $mail->Host = 'ssl://smtp.gmail.com';
 $mail->SMTPAuth = true;
 $mail->Port = 465;
-$mail->Username = 'kilonzowambua254@gmail.com';
-$mail->Password = '3079010203';
+$mail->Username = 'gmail.com';
+$mail->Password = '';
 if(!$mail->send()) {
   echo 'Email is not sent.';
   echo 'Email error: ' . $mail->ErrorInfo;
