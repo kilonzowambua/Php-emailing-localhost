@@ -14,11 +14,11 @@ if (isset($_POST['SendMail'])) {
     $mail->IsSMTP();
 
     $mail->SMTPSecure = 'ssl';
-    $mail->Host = 'your_mail_server_host';
+    $mail->Host = $_POST['host'];
     $mail->SMTPAuth = true;
-    $mail->Port = 465;
-    $mail->Username = 'your_mail_username';
-    $mail->Password = 'your_password';
+    $mail->Port = $_POST['port'];
+    $mail->Username = $_POST['username'];
+    $mail->Password = $_POST['password'];
     if (!$mail->send()) {
         $err = "Mail Not Send, $mail->ErrorInfo";
     } else {
@@ -72,8 +72,8 @@ if (isset($_POST['SendMail'])) {
                             <input type="text" name="host" required class="form-control">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="exampleInputEmail1">Port<label>
-                                    <input type="text" name="port" required class="form-control">
+                            <label for="exampleInputEmail1">Port</label>
+                            <input type="text" name="port" required class="form-control">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="exampleInputEmail1">Username</label>
